@@ -7,6 +7,7 @@ package javapro;
 
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -17,6 +18,7 @@ import javafx.scene.image.ImageView;
 public class ImageEdit {
 
     private ImageView Image;
+    private ColorAdjust AdjustEffect = new ColorAdjust();
     
     public ImageView getImage()
     {
@@ -28,9 +30,20 @@ public class ImageEdit {
         this.Image = myImage;
     }
 
-    public void BrightSliderEvent(Slider mySlider, TextField textField) {
+    public void BrightSliderEvent(Slider mySlider) 
+    {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            textField.setText(Double.toString(newValue.doubleValue()));
+            AdjustEffect.setBrightness(newValue.doubleValue());
+            Image.setEffect(AdjustEffect);
+
+        });
+    }
+    
+        public void SaturationSliderEvent(Slider mySlider) 
+    {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            AdjustEffect.setSaturation(newValue.doubleValue());
+            Image.setEffect(AdjustEffect);
 
         });
     }

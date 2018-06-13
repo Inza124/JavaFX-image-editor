@@ -42,8 +42,13 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Slider fx:id="bright" blockIncrement="0.01" layoutX="542.0" layoutY="23.0" max="1.0" prefHeight="14.0" prefWidth="121.0" value="0.5" />
-            <TextField fx:id="test" layoutX="498.0" layoutY="51.0" />
+            <Slider fx:id="bright" blockIncrement="0.01" layoutX="542.0" layoutY="23.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Slider fx:id="saturation" blockIncrement="0.01" layoutX="542.0" layoutY="61.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="478.0" layoutY="56.0" prefHeight="25.0" prefWidth="94.0" text="Saturacja">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane prefHeight="101.0" prefWidth="298.0" style="-fx-border-color: red; -fx-border-style: dashed;">

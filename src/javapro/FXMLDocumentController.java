@@ -41,6 +41,7 @@ public class FXMLDocumentController implements Initializable {
     private ImageEdit Images = new ImageEdit();
     @FXML private TextField test;
     @FXML private Slider bright;
+    @FXML private Slider saturation;
     @FXML private StackPane root;
     @FXML private Button buttonLoadImage = new Button();
     @FXML private ImageView myImageView = new ImageView();
@@ -72,7 +73,8 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        Images.BrightSliderEvent(bright, test);
+        Images.BrightSliderEvent(bright);
+        Images.SaturationSliderEvent(saturation);
         myImageView.fitWidthProperty().bind(root.widthProperty());
         myImageView.fitHeightProperty().bind(root.heightProperty());
    }   
