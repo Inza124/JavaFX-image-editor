@@ -16,6 +16,8 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.effect.Glow;
+import javafx.scene.effect.InnerShadow;
+import javafx.scene.effect.Lighting;
 import javafx.scene.effect.MotionBlur;
 import javafx.scene.effect.SepiaTone;
 import javafx.scene.effect.Shadow;
@@ -38,6 +40,8 @@ public class ImageEdit {
     private Glow glow = new Glow();
     private GaussianBlur gauss = new GaussianBlur();
     private Bloom bloom = new Bloom();
+    private Lighting light = new Lighting();
+    private InnerShadow shad = new InnerShadow();
 
     public ImageView getImage() {
         return Image;
@@ -75,14 +79,48 @@ public class ImageEdit {
         }));
     }
 
+    public void Light(CheckBox myCheckbox) {
+        myCheckbox.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            if (oldValue == false) {
+                light.setDiffuseConstant(2.0);
+                light.setSpecularConstant(2.0);
+                light.setSpecularExponent(40);
+                light.setSurfaceScale(6);
+
+            } else {
+       light.setDiffuseConstant(2.0);
+        light.setSpecularConstant(0.3);
+        light.setSpecularExponent(20);
+        light.setSurfaceScale(1.5);
+            }
+        }));
+    }
+
+    public void InnerShadow(CheckBox myCheckbox) {
+        myCheckbox.selectedProperty().addListener(((observable, oldValue, newValue) -> {
+            if (oldValue == false) {
+                shad.setBlurType(BlurType.GAUSSIAN);
+                shad.setColor(Color.WHEAT);
+                shad.setRadius(70);
+                shad.setHeight(90);
+                shad.setWidth(90);
+
+            } else {
+                shad.setHeight(0);
+                shad.setWidth(0);
+                shad.setRadius(0);
+            }
+        }));
+    }
+
     public void BrightSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             AdjustEffect.setBrightness(newValue.doubleValue());
 
         });
     }
-    
-      public void BloomSliderEvent(Slider mySlider) {
+
+    public void BloomSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             bloom.setThreshold(newValue.doubleValue());
 
@@ -149,6 +187,10 @@ public class ImageEdit {
     public void Init() {
         shadow.setWidth(0);
         shadow.setHeight(0);
+        light.setDiffuseConstant(2.0);
+        light.setSpecularConstant(0.3);
+        light.setSpecularExponent(20);
+        light.setSurfaceScale(1.5);
         boxblur.setIterations(0);
         boxblur.setWidth(0);
         boxblur.setHeight(0);
@@ -157,7 +199,12 @@ public class ImageEdit {
         glow.setLevel(0);
         sepia.setLevel(0);
         gauss.setRadius(0);
-        bloom.setThreshold(0);
+        bloom.setThreshold(1);
+        shad.setHeight(0);
+        shad.setWidth(0);
+        shad.setRadius(0);
+        light.setContentInput(shad);
+        bloom.setInput(light);
         gauss.setInput(bloom);
         sepia.setInput(gauss);
         glow.setInput(sepia);
