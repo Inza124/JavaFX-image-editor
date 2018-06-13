@@ -5,6 +5,7 @@
  */
 package javapro;
 
+import javafx.scene.CacheHint;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.ColorAdjust;
@@ -44,6 +45,8 @@ public class ImageEdit {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             AdjustEffect.setSaturation(newValue.doubleValue());
             Image.setEffect(AdjustEffect);
+            Image.setCache(true);
+            Image.setCacheHint(CacheHint.SPEED);
 
         });
     }

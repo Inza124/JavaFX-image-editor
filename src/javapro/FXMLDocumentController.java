@@ -44,6 +44,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML private Slider saturation;
     @FXML private StackPane root;
     @FXML private Button buttonLoadImage = new Button();
+    @FXML private Button buttonSaveImage = new Button();
     @FXML private ImageView myImageView = new ImageView();
     
     @FXML
@@ -69,6 +70,21 @@ public class FXMLDocumentController implements Initializable {
                // smf goes wrong
             }      
     }
+    
+    @FXML
+    private void SaveImage(ActionEvent event) {
+                FileChooser fileChooser = new FileChooser();
+                fileChooser.setTitle("Save Image");
+                 
+                File file = fileChooser.showSaveDialog(null);
+                if (file != null) {
+                    try {
+                        BufferedImage bImage = SwingFXUtils.fromFXImage(myImageView.snapshot(null, null), null);
+                        ImageIO.write(bImage,"png", file);
+                    } catch (IOException ex) {
+                    }
+                }
+            }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 

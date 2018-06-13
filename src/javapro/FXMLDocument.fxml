@@ -31,7 +31,7 @@
                   <Font name="Calibri Light" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="buttonLoadImage1" layoutX="307.0" layoutY="51.0" mnemonicParsing="false" onAction="#LoadImage" prefHeight="33.0" prefWidth="140.0" text="Zapisz grafikę">
+            <Button fx:id="buttonSaveImage" layoutX="307.0" layoutY="51.0" mnemonicParsing="false" onAction="#SaveImage" prefHeight="33.0" prefWidth="140.0" text="Zapisz grafikę">
                <font>
                   <Font name="Calibri Light" size="18.0" />
                </font>
