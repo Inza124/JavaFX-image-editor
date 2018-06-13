@@ -42,6 +42,10 @@ public class FXMLDocumentController implements Initializable {
     private ImageEdit Images = new ImageEdit();
     @FXML private CheckBox shadow;
     @FXML private CheckBox blur;
+    @FXML private Slider Sepia;
+    @FXML private Slider Glow;
+    @FXML private Slider MotionRadius;
+    @FXML private Slider MotionAngle;
     @FXML private Slider bright;
     @FXML private Slider saturation;
     @FXML private Slider Hue;
@@ -92,6 +96,8 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
         Images.Blur(blur);
+        Images.MotionAngleEvent(MotionAngle);
+        Images.MotionRadiusEvent(MotionRadius);
         Images.DropShadow(shadow);
         Images.BrightSliderEvent(bright);
         Images.SaturationSliderEvent(saturation);

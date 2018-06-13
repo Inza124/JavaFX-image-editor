@@ -13,6 +13,10 @@ import javafx.scene.effect.BlurType;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.effect.Glow;
+import javafx.scene.effect.MotionBlur;
+import javafx.scene.effect.SepiaTone;
 import javafx.scene.effect.Shadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,6 +32,10 @@ public class ImageEdit {
     private ColorAdjust AdjustEffect = new ColorAdjust();
     private DropShadow shadow = new DropShadow(5, Color.CRIMSON);
     private BoxBlur boxblur = new BoxBlur();
+    private MotionBlur motion = new MotionBlur();
+    private SepiaTone sepia = new SepiaTone();
+    private Glow glow = new Glow();
+    private GaussianBlur gauss = new GaussianBlur();
 
     public ImageView getImage() {
         return Image;
@@ -35,16 +43,8 @@ public class ImageEdit {
 
     public void setImage(ImageView myImage) {
         this.Image = myImage;
-        shadow.setWidth(0);
-        shadow.setHeight(0);
-        boxblur.setIterations(0);
-        boxblur.setWidth(0);
-        boxblur.setHeight(0);
-        shadow.setInput(boxblur);
-        AdjustEffect.setInput(shadow);
-        Image.setEffect(AdjustEffect);
-        Image.setCache(true);
-        Image.setCacheHint(CacheHint.SPEED);
+        Init();
+        
     }
 
     public void DropShadow(CheckBox myCheckbox) {
@@ -80,6 +80,41 @@ public class ImageEdit {
         });
     }
 
+        public void SepiaSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            sepia.setLevel(newValue.doubleValue());
+
+        });
+    }
+        
+                public void GlowSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            glow.setLevel(newValue.doubleValue());
+
+        });
+        
+    }
+                                public void GaussSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            glow.setLevel(newValue.doubleValue());
+
+        });
+                                }
+    
+    public void MotionRadiusEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            motion.setRadius(newValue.doubleValue());
+
+        });
+    }
+
+    public void MotionAngleEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            motion.setAngle(newValue.doubleValue());
+
+        });
+    }
+
     public void SaturationSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             AdjustEffect.setSaturation(newValue.doubleValue());
@@ -99,5 +134,29 @@ public class ImageEdit {
             AdjustEffect.setContrast(newValue.doubleValue());
 
         });
+    }
+    
+    
+    public void Init()
+    {
+    shadow.setWidth(0);
+        shadow.setHeight(0);
+        boxblur.setIterations(0);
+        boxblur.setWidth(0);
+        boxblur.setHeight(0);
+        motion.setAngle(0);
+        motion.setRadius(0);
+        glow.setLevel(0);
+        sepia.setLevel(0);
+        gauss.setRadius(0);
+        sepia.setInput(gauss);
+        glow.setInput(sepia);
+        motion.setInput(glow);
+        boxblur.setInput(motion);
+        shadow.setInput(boxblur);
+        AdjustEffect.setInput(shadow);
+        Image.setEffect(AdjustEffect);
+        Image.setCache(true);
+        Image.setCacheHint(CacheHint.SPEED);
     }
 }
