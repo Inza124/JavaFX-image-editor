@@ -41,6 +41,7 @@ public class FXMLDocumentController implements Initializable {
     
     private ImageEdit Images = new ImageEdit();
     @FXML private CheckBox shadow;
+    @FXML private CheckBox blur;
     @FXML private Slider bright;
     @FXML private Slider saturation;
     @FXML private Slider Hue;
@@ -90,7 +91,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        Images.ImgEffects();
+        Images.Blur(blur);
         Images.DropShadow(shadow);
         Images.BrightSliderEvent(bright);
         Images.SaturationSliderEvent(saturation);

@@ -66,7 +66,7 @@
                </font>
             </Label>
             <Slider fx:id="contrast" blockIncrement="0.01" layoutX="712.0" layoutY="43.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
-            <CheckBox layoutX="574.0" layoutY="15.0" mnemonicParsing="false" text="Rozmycie" />
+            <CheckBox fx:id="blur" layoutX="574.0" layoutY="15.0" mnemonicParsing="false" text="Rozmycie" />
             <CheckBox fx:id="shadow" layoutX="669.0" layoutY="15.0" mnemonicParsing="false" text="Cień" />
          </children>
       </Pane>
