@@ -44,6 +44,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML private CheckBox blur;
     @FXML private Slider Sepia;
     @FXML private Slider Glow;
+    @FXML private Slider Gauss;
+    @FXML private Slider Bloom;
     @FXML private Slider MotionRadius;
     @FXML private Slider MotionAngle;
     @FXML private Slider bright;
@@ -95,6 +97,10 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        Images.BloomSliderEvent(Bloom);
+        Images.GaussSliderEvent(Gauss);
+        Images.GlowSliderEvent(Glow);
+        Images.SepiaSliderEvent(Sepia);
         Images.Blur(blur);
         Images.MotionAngleEvent(MotionAngle);
         Images.MotionRadiusEvent(MotionRadius);

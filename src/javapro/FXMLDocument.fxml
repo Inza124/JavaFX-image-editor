@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="744.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javapro.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="740.0" prefWidth="1241.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javapro.FXMLDocumentController">
    <children>
       <StackPane fx:id="root" layoutX="3.0" layoutY="108.0" prefHeight="635.0" prefWidth="1185.0" style="-fx-padding: 4px;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="108.0">
          <children>
@@ -19,6 +19,7 @@
                   <Insets />
                </StackPane.margin>
             </ImageView>
+            <Pane prefHeight="47.0" prefWidth="357.0" style="-fx-border-color: wheat;" />
          </children>
          <padding>
             <Insets bottom="5.0" top="5.0" />
@@ -74,23 +75,47 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="823.0" layoutY="39.0" text="Rozmycie ruchu">
+            <Label layoutX="936.0" layoutY="11.0" text="Rozmycie ruchu">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Slider fx:id="MotionRadius" blockIncrement="1.0" layoutX="1052.0" layoutY="42.0" majorTickUnit="250.0" prefHeight="14.0" prefWidth="94.0" />
-            <Slider fx:id="MotionAngle" blockIncrement="4.0" layoutX="938.0" layoutY="41.0" max="360.0" prefHeight="14.0" prefWidth="94.0" />
-            <Label layoutX="979.0" layoutY="26.0" text="Kąt">
+            <Slider fx:id="MotionRadius" blockIncrement="1.0" layoutX="1133.0" layoutY="14.0" majorTickUnit="250.0" prefHeight="14.0" prefWidth="94.0" />
+            <Slider fx:id="MotionAngle" blockIncrement="4.0" layoutX="1033.0" layoutY="13.0" max="360.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="1073.0" layoutY="1.0" text="Kąt">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
-            <Label layoutX="1073.0" layoutY="26.0" text="Powierzchnia">
+            <Label layoutX="1156.0" layoutY="1.0" text="Powierzchnia">
                <font>
                   <Font size="9.0" />
                </font>
             </Label>
+            <Slider fx:id="Sepia" blockIncrement="0.01" layoutX="864.0" layoutY="41.0" max="1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="824.0" layoutY="39.0" text="Sepia">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="967.0" layoutY="39.0" text="Błysk">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Slider fx:id="Glow" blockIncrement="0.01" layoutX="1007.0" layoutY="41.0" max="1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Slider fx:id="Gauss" blockIncrement="1.0" layoutX="1148.0" layoutY="41.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="1108.0" layoutY="39.0" text="Gauss">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="824.0" layoutY="67.0" text="Rozświetlenie">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Slider fx:id="Bloom" blockIncrement="0.01" layoutX="911.0" layoutY="70.0" max="1.0" prefHeight="14.0" prefWidth="94.0" />
          </children>
       </Pane>
       <Pane prefHeight="101.0" prefWidth="298.0" style="-fx-border-color: red; -fx-border-style: dashed;">

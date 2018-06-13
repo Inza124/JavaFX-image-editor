@@ -9,6 +9,7 @@ import javafx.scene.CacheHint;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.Bloom;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
@@ -36,6 +37,7 @@ public class ImageEdit {
     private SepiaTone sepia = new SepiaTone();
     private Glow glow = new Glow();
     private GaussianBlur gauss = new GaussianBlur();
+    private Bloom bloom = new Bloom();
 
     public ImageView getImage() {
         return Image;
@@ -44,7 +46,7 @@ public class ImageEdit {
     public void setImage(ImageView myImage) {
         this.Image = myImage;
         Init();
-        
+
     }
 
     public void DropShadow(CheckBox myCheckbox) {
@@ -79,28 +81,36 @@ public class ImageEdit {
 
         });
     }
+    
+      public void BloomSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            bloom.setThreshold(newValue.doubleValue());
 
-        public void SepiaSliderEvent(Slider mySlider) {
+        });
+    }
+
+    public void SepiaSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             sepia.setLevel(newValue.doubleValue());
 
         });
     }
-        
-                public void GlowSliderEvent(Slider mySlider) {
+
+    public void GlowSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             glow.setLevel(newValue.doubleValue());
 
         });
-        
+
     }
-                                public void GaussSliderEvent(Slider mySlider) {
+
+    public void GaussSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            glow.setLevel(newValue.doubleValue());
+            gauss.setRadius(newValue.doubleValue());
 
         });
-                                }
-    
+    }
+
     public void MotionRadiusEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             motion.setRadius(newValue.doubleValue());
@@ -135,11 +145,9 @@ public class ImageEdit {
 
         });
     }
-    
-    
-    public void Init()
-    {
-    shadow.setWidth(0);
+
+    public void Init() {
+        shadow.setWidth(0);
         shadow.setHeight(0);
         boxblur.setIterations(0);
         boxblur.setWidth(0);
@@ -149,6 +157,8 @@ public class ImageEdit {
         glow.setLevel(0);
         sepia.setLevel(0);
         gauss.setRadius(0);
+        bloom.setThreshold(0);
+        gauss.setInput(bloom);
         sepia.setInput(gauss);
         glow.setInput(sepia);
         motion.setInput(glow);
