@@ -59,7 +59,7 @@ public class ImageEdit {
 
     public void ContrastSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-            AdjustEffect.setSaturation(newValue.doubleValue());
+            AdjustEffect.setContrast(newValue.doubleValue());
             Image.setEffect(AdjustEffect);
             Image.setCache(true);
             Image.setCacheHint(CacheHint.SPEED);

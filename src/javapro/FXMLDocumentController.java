@@ -93,6 +93,7 @@ public class FXMLDocumentController implements Initializable {
         Images.BrightSliderEvent(bright);
         Images.SaturationSliderEvent(saturation);
         Images.HueSliderEvent(Hue);
+        Images.ContrastSliderEvent(contrast);
         myImageView.fitWidthProperty().bind(root.widthProperty());
         myImageView.fitHeightProperty().bind(root.heightProperty());
    }   

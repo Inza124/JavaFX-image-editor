@@ -60,6 +60,12 @@
                   <Font size="15.0" />
                </font>
             </Label>
+            <Label layoutX="648.0" layoutY="38.0" prefHeight="25.0" prefWidth="94.0" text="Kontrast">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="contrast" blockIncrement="0.01" layoutX="712.0" layoutY="43.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
          </children>
       </Pane>
       <Pane prefHeight="101.0" prefWidth="298.0" style="-fx-border-color: red; -fx-border-style: dashed;">
