@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="744.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javapro.FXMLDocumentController">
+   <children>
+      <StackPane fx:id="root" layoutX="3.0" layoutY="108.0" prefHeight="635.0" prefWidth="1185.0" style="-fx-padding: 4px;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="108.0">
+         <children>
+            <ImageView fx:id="myImageView" fitHeight="620.0" fitWidth="1177.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </StackPane>
+      <Pane prefHeight="101.0" prefWidth="1265.0" style="-fx-background-color: #d1e1f9; -fx-border-style: solid;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="buttonLoadImage" layoutX="307.0" layoutY="6.0" mnemonicParsing="false" onAction="#LoadImage" prefHeight="33.0" prefWidth="140.0" text="Wczytaj grafikę">
+               <font>
+                  <Font name="Calibri Light" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonLoadImage1" layoutX="307.0" layoutY="51.0" mnemonicParsing="false" onAction="#LoadImage" prefHeight="33.0" prefWidth="140.0" text="Zapisz grafikę">
+               <font>
+                  <Font name="Calibri Light" size="18.0" />
+               </font>
+            </Button>
+            <Separator layoutX="453.0" layoutY="4.0" orientation="VERTICAL" prefHeight="94.0" prefWidth="5.0" />
+            <Label layoutX="478.0" layoutY="18.0" prefHeight="25.0" prefWidth="94.0" text="Jasnosć">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="bright" blockIncrement="0.01" layoutX="542.0" layoutY="23.0" max="1.0" prefHeight="14.0" prefWidth="121.0" value="0.5" />
+            <TextField fx:id="test" layoutX="498.0" layoutY="51.0" />
+         </children>
+      </Pane>
+      <Pane prefHeight="101.0" prefWidth="298.0" style="-fx-border-color: red; -fx-border-style: dashed;">
+         <children>
+            <ImageView fitHeight="101.0" fitWidth="294.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
