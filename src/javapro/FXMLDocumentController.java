@@ -17,8 +17,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.scene.control.Button; 
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.effect.Effect;
@@ -57,7 +60,26 @@ public class FXMLDocumentController implements Initializable {
     @FXML private StackPane root;
     @FXML private Button buttonLoadImage = new Button();
     @FXML private Button buttonSaveImage = new Button();
+    @FXML private Button infobtn = new Button();
     @FXML private ImageView myImageView = new ImageView();
+    
+    
+    @FXML 
+    private void buttonInfo(ActionEvent event){
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setWidth(300);
+        alert.setTitle("Okno Informacyje");
+        alert.setHeaderText("Informacje dotyczące aplikacji");
+        alert.setContentText("Jest to aplikacja przygotowana na zaliczenie przedmiotu Programowanie w Języku Java. Prowadzącym jest Dr.inż Jan Prokop. "
+                + "Aplikacja służy do edycji zdjęć oraz grafik, Aplikacja została podzielona na dwa podobne do siebie moduły, które rożni stopień "
+                + "zaawansowania udostępnianych przez nie funkcji. Autorem aplikacji jest Piotr Stachaczyński, nr albumu: 148899. Przykładowe zdjęcia "
+                + "zostały podrane z internetu (z wyjątkiem loga programu)");
+        alert.showAndWait().ifPresent(rs -> {
+    if (rs == ButtonType.OK) {
+        System.out.println("Pressed OK.");
+    }
+});
+    }
     
     @FXML
     private void LoadImage(ActionEvent event) {

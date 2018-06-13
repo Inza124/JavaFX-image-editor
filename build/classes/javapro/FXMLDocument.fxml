@@ -125,6 +125,7 @@
                <image>
                   <Image url="@Logo.png" />
                </image></ImageView>
+            <Button fx:id="infobtn" layoutX="248.0" layoutY="62.0" mnemonicParsing="false" onAction="#buttonInfo" prefHeight="19.0" prefWidth="29.0" text="?" />
          </children>
       </Pane>
    </children>
