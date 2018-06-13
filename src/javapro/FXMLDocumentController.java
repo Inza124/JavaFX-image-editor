@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.stage.FileChooser;
 import javafx.scene.control.Button; 
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.effect.Effect;
 import javafx.scene.control.Label;
@@ -39,6 +40,7 @@ import javax.imageio.ImageIO;
 public class FXMLDocumentController implements Initializable {
     
     private ImageEdit Images = new ImageEdit();
+    @FXML private CheckBox shadow;
     @FXML private Slider bright;
     @FXML private Slider saturation;
     @FXML private Slider Hue;
@@ -50,15 +52,13 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void LoadImage(ActionEvent event) {
-        System.out.println("You clicked me!");
+      //  System.out.println("You clicked me!");
         FileChooser fileChooser = new FileChooser();
              
-            //Set extension filter
             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
             FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
             fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
-              
-            //Show open file dialog
+
             File file = fileChooser.showOpenDialog(null);
                        
             try 
@@ -68,7 +68,7 @@ public class FXMLDocumentController implements Initializable {
                 myImageView.setImage(image);
                 Images.setImage(myImageView);
             } catch (IOException ex) {
-               // smf goes wrong
+
             }      
     }
     
@@ -90,6 +90,8 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
+        Images.ImgEffects();
+        Images.DropShadow(shadow);
         Images.BrightSliderEvent(bright);
         Images.SaturationSliderEvent(saturation);
         Images.HueSliderEvent(Hue);
