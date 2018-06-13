@@ -37,14 +37,25 @@
                </font>
             </Button>
             <Separator layoutX="453.0" layoutY="4.0" orientation="VERTICAL" prefHeight="94.0" prefWidth="5.0" />
-            <Label layoutX="478.0" layoutY="18.0" prefHeight="25.0" prefWidth="94.0" text="Jasnosć">
+            <Label layoutX="480.0" layoutY="36.0" prefHeight="25.0" prefWidth="94.0" text="Jasnosć">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Slider fx:id="bright" blockIncrement="0.01" layoutX="542.0" layoutY="23.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
-            <Slider fx:id="saturation" blockIncrement="0.01" layoutX="542.0" layoutY="61.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
-            <Label layoutX="478.0" layoutY="56.0" prefHeight="25.0" prefWidth="94.0" text="Saturacja">
+            <Slider fx:id="bright" blockIncrement="0.01" layoutX="544.0" layoutY="41.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Slider fx:id="saturation" blockIncrement="0.01" layoutX="544.0" layoutY="69.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="480.0" layoutY="64.0" prefHeight="25.0" prefWidth="94.0" text="Saturacja">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="459.0" layoutY="1.0" style="-fx-border-color: red; -fx-background-color: wheat;" text=" Podstawowe ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Slider fx:id="Hue" blockIncrement="0.01" layoutX="712.0" layoutY="69.0" max="1.0" min="-1.0" prefHeight="14.0" prefWidth="94.0" />
+            <Label layoutX="648.0" layoutY="64.0" prefHeight="25.0" prefWidth="94.0" text="Odcień">
                <font>
                   <Font size="15.0" />
                </font>

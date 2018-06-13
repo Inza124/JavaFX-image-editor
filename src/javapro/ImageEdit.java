@@ -20,28 +20,44 @@ public class ImageEdit {
 
     private ImageView Image;
     private ColorAdjust AdjustEffect = new ColorAdjust();
-    
-    public ImageView getImage()
-    {
+
+    public ImageView getImage() {
         return Image;
     }
-    
-    public void setImage(ImageView myImage)
-    {
+
+    public void setImage(ImageView myImage) {
         this.Image = myImage;
     }
 
-    public void BrightSliderEvent(Slider mySlider) 
-    {
+    public void BrightSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             AdjustEffect.setBrightness(newValue.doubleValue());
             Image.setEffect(AdjustEffect);
 
         });
     }
-    
-        public void SaturationSliderEvent(Slider mySlider) 
-    {
+
+    public void SaturationSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            AdjustEffect.setSaturation(newValue.doubleValue());
+            Image.setEffect(AdjustEffect);
+            Image.setCache(true);
+            Image.setCacheHint(CacheHint.SPEED);
+
+        });
+    }
+
+    public void HueSliderEvent(Slider mySlider) {
+        mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            AdjustEffect.setHue(newValue.doubleValue());
+            Image.setEffect(AdjustEffect);
+            Image.setCache(true);
+            Image.setCacheHint(CacheHint.SPEED);
+
+        });
+    }
+
+    public void ContrastSliderEvent(Slider mySlider) {
         mySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             AdjustEffect.setSaturation(newValue.doubleValue());
             Image.setEffect(AdjustEffect);

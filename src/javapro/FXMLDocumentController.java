@@ -39,9 +39,10 @@ import javax.imageio.ImageIO;
 public class FXMLDocumentController implements Initializable {
     
     private ImageEdit Images = new ImageEdit();
-    @FXML private TextField test;
     @FXML private Slider bright;
     @FXML private Slider saturation;
+    @FXML private Slider Hue;
+    @FXML private Slider contrast;
     @FXML private StackPane root;
     @FXML private Button buttonLoadImage = new Button();
     @FXML private Button buttonSaveImage = new Button();
@@ -91,6 +92,7 @@ public class FXMLDocumentController implements Initializable {
     {
         Images.BrightSliderEvent(bright);
         Images.SaturationSliderEvent(saturation);
+        Images.HueSliderEvent(Hue);
         myImageView.fitWidthProperty().bind(root.widthProperty());
         myImageView.fitHeightProperty().bind(root.heightProperty());
    }   
