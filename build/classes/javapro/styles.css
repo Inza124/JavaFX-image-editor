@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018-06-14, 12:43:02
+    Author     : Piotr
+*/
+
+.infobtn 
+{
+    -fx-background-radius: 5em;
+    -fx-background-color: linear-gradient(to bottom right, palegreen, lightslategrey);
+}
+
+.logoBg
+{
+    -fx-background-color: linear-gradient(to bottom, cyan, lightsteelblue);
+}
+
+.pane
+{
+    -fx-background-color: linear-gradient(to bottom, wheat, whitesmoke);
+}
+
+
+.slider .track {
+    -fx-background-color: lightsteelblue;
+}
+
+.slider .thumb {
+    -fx-background-color: #ffcccc;
+}
+
