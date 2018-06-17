@@ -60,6 +60,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML private StackPane root;
     @FXML private Button buttonLoadImage = new Button();
     @FXML private Button buttonSaveImage = new Button();
+    @FXML private Button resetBtn = new Button();
     @FXML private Button infobtn = new Button();
     @FXML private ImageView myImageView = new ImageView();
     
@@ -81,6 +82,24 @@ public class FXMLDocumentController implements Initializable {
 });
     }
     
+    @FXML 
+    private void reset() {
+        contrast.setValue(0);
+        Hue.setValue(0);
+        saturation.setValue(0);
+        bright.setValue(0);
+        shadow.setSelected(false);
+        blur.setSelected(false);
+        Sepia.setValue(0);
+        Glow.setValue(0);
+        Gauss.setValue(0);
+        Bloom.setValue(1);
+        MotionAngle.setValue(0);
+        MotionRadius.setValue(0);
+        innshadow.setSelected(false);
+        light.setSelected(false);
+    }
+    
     @FXML
     private void LoadImage(ActionEvent event) {
       //  System.out.println("You clicked me!");
@@ -97,6 +116,7 @@ public class FXMLDocumentController implements Initializable {
                 BufferedImage bufferedImage = ImageIO.read(file);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
                 myImageView.setImage(image);
+                reset();
                 Images.setImage(myImageView);
             } catch (IOException ex) {
 
@@ -107,6 +127,9 @@ public class FXMLDocumentController implements Initializable {
     private void SaveImage(ActionEvent event) {
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("Save Image");
+            FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
+            FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
+            fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
                  
                 File file = fileChooser.showSaveDialog(null);
                 if (file != null) {
