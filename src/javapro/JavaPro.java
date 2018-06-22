@@ -15,6 +15,7 @@ import javafx.stage.Stage;
  *
  * @author Piotr
  */
+
 public class JavaPro extends Application {
     
     @Override

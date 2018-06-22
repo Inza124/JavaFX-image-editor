@@ -8,7 +8,32 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="JavaPro.jar" size="130668" download="eager" />
+    <jar href="JavaPro.jar" size="129917" download="eager" />
+    <jar href="lib\activation.jar" size="124315" download="eager" />
+    <jar href="lib\eclipselink.jar" size="8478776" download="eager" />
+    <jar href="lib\hibernate-jpa-2.1-api-1.0.0.Final.jar" size="115983" download="eager" />
+    <jar href="lib\javax.persistence.jar" size="160564" download="eager" />
+    <jar href="lib\javax.persistence_2.1.0.v201304241213.jar" size="164637" download="eager" />
+    <jar href="lib\javax.resource_1.6.0.v201204270900.jar" size="68673" download="eager" />
+    <jar href="lib\jaxb-api.jar" size="100609" download="eager" />
+    <jar href="lib\jaxb-impl.jar" size="1110396" download="eager" />
+    <jar href="lib\jaxb-xjc.jar" size="3476101" download="eager" />
+    <jar href="lib\jaxb1-impl.jar" size="1083178" download="eager" />
+    <jar href="lib\jsr173_1.0_api.jar" size="45537" download="eager" />
+    <jar href="lib\org.eclipse.persistence.antlr.jar" size="189039" download="eager" />
+    <jar href="lib\org.eclipse.persistence.asm.jar" size="323238" download="eager" />
+    <jar href="lib\org.eclipse.persistence.core.jar" size="5343220" download="eager" />
+    <jar href="lib\org.eclipse.persistence.dbws.jar" size="349151" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa.jar" size="1434616" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa.jpql.jar" size="1412374" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" size="1366247" download="eager" />
+    <jar href="lib\org.eclipse.persistence.jpa.modelgen.processor.jar" size="51807" download="eager" />
+    <jar href="lib\org.eclipse.persistence.moxy.jar" size="636716" download="eager" />
+    <jar href="lib\org.eclipse.persistence.nosql.source_2.7.1.v20171221-bd47e8f.jar" size="119964" download="eager" />
+    <jar href="lib\org.eclipse.persistence.nosql_2.7.1.v20171221-bd47e8f.jar" size="133420" download="eager" />
+    <jar href="lib\org.eclipse.persistence.oracle.jar" size="88029" download="eager" />
+    <jar href="lib\org.eclipse.persistence.oracle.nosql.source_2.7.0.v20170630-9d93b0e80a.jar" size="55389" download="eager" />
+    <jar href="lib\org.eclipse.persistence.oracle.nosql_2.7.0.v20170630-9d93b0e80a.jar" size="61736" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaPro" >
     <param name="requiredFXVersion" value="8.0+"/>

@@ -66,23 +66,6 @@ public class FXMLDocumentController implements Initializable {
     
     
     @FXML 
-    private void buttonInfo(ActionEvent event){
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setWidth(300);
-        alert.setTitle("Okno Informacyje");
-        alert.setHeaderText("Informacje dotyczące aplikacji");
-        alert.setContentText("Jest to aplikacja przygotowana na zaliczenie przedmiotu Programowanie w Języku Java. Prowadzącym jest Dr.inż Jan Prokop. "
-                + "Aplikacja służy do edycji zdjęć oraz grafik, Aplikacja została podzielona na dwa podobne do siebie moduły, które rożni stopień "
-                + "zaawansowania udostępnianych przez nie funkcji. Autorem aplikacji jest Piotr Stachaczyński, nr albumu: 148899. Przykładowe zdjęcia "
-                + "zostały podrane z internetu (z wyjątkiem loga programu)");
-        alert.showAndWait().ifPresent(rs -> {
-    if (rs == ButtonType.OK) {
-        System.out.println("Pressed OK.");
-    }
-});
-    }
-    
-    @FXML 
     private void reset() {
         contrast.setValue(0);
         Hue.setValue(0);
@@ -102,15 +85,12 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void LoadImage(ActionEvent event) {
-      //  System.out.println("You clicked me!");
-        FileChooser fileChooser = new FileChooser();
-             
+            FileChooser fileChooser = new FileChooser();            
             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
             FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
             fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
 
-            File file = fileChooser.showOpenDialog(null);
-                       
+            File file = fileChooser.showOpenDialog(null);                       
             try 
             {
                 BufferedImage bufferedImage = ImageIO.read(file);
@@ -125,8 +105,9 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void SaveImage(ActionEvent event) {
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setTitle("Save Image");
+            
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save Image");
             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
             FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
             fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
