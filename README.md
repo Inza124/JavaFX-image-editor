@@ -13,12 +13,11 @@ The program was written for passing the course called programming in java langua
 * [Contact](#contact)
 
 ## General info
-Graphical interface was created in FXML language. The program was written based on the MVC pattern, but as the program does not use any database, the model class has been reduced to the characteristics of the images. The program can be run after downloading the repository. All you need to do is have Jave installed, a folder with sample photos that can be edited has also been added
+Graphical interface was created in FXML language. The program was written based on the MVC pattern, but as the program does not use any database, the model class has been reduced to the characteristics of the images. The program can be run after downloading the repository. All you need to do is have Jave installed, a folder with sample photos that can be edited has also been added. According to the instruction of the professor running the subject, the program is in Polish
 
 ## Screenshots
-![Homepage](http://oi65.tinypic.com/2qn5ahe.jpg)
-![Movie view](http://oi63.tinypic.com/in7ig8.jpg)
-![Login page](http://oi68.tinypic.com/2zoek1y.jpg)
+![Menu](http://oi67.tinypic.com/2nq4jnc.jpg)
+![edited](http://oi67.tinypic.com/2jebxj6.jpg)
 
 ## Technologies
 * Java SE 8 
